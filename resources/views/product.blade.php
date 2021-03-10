@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title', 'Our Products')
 @section('content')
 
     <div class="page-heading products-heading header-text">
@@ -14,7 +15,7 @@
       </div>
     </div>
 
-    <div class="products">
+    <div class="products" id="produk">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -30,125 +31,32 @@
           <div class="col-md-12">
             <div class="filters-content">
                 <div class="row grid">
-                    <div class="col-lg-4 col-md-4 all des">
+                @foreach($produk as $p)
+                    <div class="col-lg-4 col-md-4 all {{$p -> filter}}">
                       <div class="product-item">
-                        <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+                        <a href="#"><img src="{{$p -> foto}}" alt=""></a>
                         <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$18.25</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                          <a href="#"><h4>{{$p -> nama}}</h4></a>
+                          <h6>Rp{{$p -> harga}}</h6>
+                          <p>{{$p -> deskripsi}}</p>
+                          
                           <ul class="stars">
+                          @for ($i = 0; $i < $p -> rating; $i++)
                             <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
+                          @endfor
+                          @for ($i = $p -> rating; $i < 4; $i++)
+                            <li><i class="fa fa-star-o"></i></li>
+                          @endfor
+                            <li>{{$p->rating}}</li>
                           </ul>
-                          <span>Reviews (12)</span>
+                          <span>Reviews ({{rand(1,100)}})</span>
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 all dev">
-                      <div class="product-item">
-                        <a href="#"><img src="assets/images/product_02.jpg" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$16.75</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (24)</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 all gra">
-                      <div class="product-item">
-                        <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$32.50</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (36)</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 all gra">
-                      <div class="product-item">
-                        <a href="#"><img src="assets/images/product_04.jpg" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$24.60</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (48)</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 all dev">
-                      <div class="product-item">
-                        <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$18.75</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (60)</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 all des">
-                      <div class="product-item">
-                        <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$12.50</h6>
-                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (72)</span>
-                        </div>
-                      </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-          </div>
-          <div class="col-md-12">
-            <ul class="pages">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-            </ul>
+            {{$produk -> links('vendor.pagination.custom')}}
           </div>
         </div>
       </div>

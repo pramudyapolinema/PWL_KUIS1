@@ -21,7 +21,14 @@
                             @if ($page == $paginator->currentPage())
                             <li class="active"><a>{{ $page }}</a></li>
                             @else
-                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                              <?php
+                                if(Request::is('about')){
+                                  $id = '#teammember';
+                                } elseif(Request::is('product')){
+                                  $id = '#produk';
+                                }
+                              ?>
+                            <li><a href="{{ $url }}{{ $id }} ">{{ $page }}</a></li>
                             @endif
                         @endforeach
                     @endif

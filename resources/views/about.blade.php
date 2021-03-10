@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title', 'About Us')
 @section('content')
 
 <div class="page-heading about-heading header-text">
@@ -45,7 +46,7 @@
     </div>
 
     
-    <div class="team-members">
+    <div class="team-members" id="teammember">
       <div class="container">
         <div class="row">
           <div class="col-md-12">

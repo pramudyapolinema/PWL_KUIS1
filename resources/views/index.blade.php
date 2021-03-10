@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('title', 'Sixteen Clothing Template')
 @section('content')
 
 <!-- Banner Starts Here -->
