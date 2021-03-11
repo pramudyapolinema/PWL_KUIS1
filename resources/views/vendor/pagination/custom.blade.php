@@ -7,6 +7,8 @@
   } elseif(Request::is('supplier')){
     $id = '#supplier';
     $style = 'background-color:white;';
+  } elseif(Request::is('customer')){
+    $id = '#pelanggan';
   }
 ?>
 

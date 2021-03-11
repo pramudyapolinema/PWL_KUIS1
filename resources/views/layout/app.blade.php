@@ -65,6 +65,9 @@ https://templatemo.com/tm-546-sixteen-clothing
               <li class="nav-item">
                 <a class="nav-link {{ Request::is('supplier') ? 'active' : '' }}" href="/supplier">Supplier</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('customer') ? 'active' : '' }}" href="/customer">Customers</a>
+              </li>
             </ul>
           </div>
         </div>
