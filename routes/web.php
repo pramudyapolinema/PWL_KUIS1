@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/supplier', [SupplierController::class, 'index']);
+
+Route::get('/customer', [PelangganController::class, 'index']);

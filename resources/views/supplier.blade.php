@@ -49,7 +49,7 @@
     <br>
     <br>
 
-    <div class="services">
+    <div class="services" id="supplier">
       <div class="container">
         <div class="row">
         @foreach($supplier as $s)
