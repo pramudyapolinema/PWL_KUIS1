@@ -1,27 +1,26 @@
 @extends('layout.app')
-@section('title', 'About Us')
+@section('title', 'Suppliers')
 @section('content')
 
-<div class="page-heading about-heading header-text">
+    <div class="page-heading products-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>about us</h4>
-              <h2>our company</h2>
+              <h4>our suppliers</h4>
+              <h2>connecting everywhere</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
     <div class="best-features about-features">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Our Background</h2>
+              <h2>Our Suppliers</h2>
             </div>
           </div>
           <div class="col-md-6">
@@ -31,7 +30,7 @@
           </div>
           <div class="col-md-6">
             <div class="left-content">
-              <h4>Who we are &amp; What we do?</h4>
+              <h4>Where are we &amp; Who is our collaborators?</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
               <ul class="social-icons">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -45,44 +44,32 @@
       </div>
     </div>
 
-    
-    <div class="team-members" id="teammember">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="services">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Our Team Members</h2>
-            </div>
-          </div>
-          @foreach($pegawai as $p)
+        @foreach($supplier as $s)
           <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{$p -> foto}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
+            <div class="service-item" style="padding-bottom:40px;">
+              <div class="icon">
+                <img src="{{$s -> logo}}">
               </div>
               <div class="down-content">
-                <h4>{{ $p -> nama }}</h4>
-                <span>{{ $p -> jabatan }}</span>
-                <p>{{ $p -> alamat }}</p>
+                <h4>{{$s -> nama}}</h4>
+                <p>{{$s -> alamat}}</p>
+                <a href="#" class="filled-button">Read More</a>
               </div>
             </div>
           </div>
-          @endforeach
+        @endforeach
+        {{$supplier -> links('vendor.pagination.custom')}}
         </div>
       </div>
     </div>
-
-    {{$pegawai -> links('vendor.pagination.custom')}}
 
     <div class="happy-clients">
       <div class="container">
